@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ApexFit/static/css/main.2922b50c.css",
+    "main.js": "/ApexFit/static/js/main.3adc7258.js",
+    "static/js/453.d66108e4.chunk.js": "/ApexFit/static/js/453.d66108e4.chunk.js",
+    "index.html": "/ApexFit/index.html",
+    "main.2922b50c.css.map": "/ApexFit/static/css/main.2922b50c.css.map",
+    "main.3adc7258.js.map": "/ApexFit/static/js/main.3adc7258.js.map",
+    "453.d66108e4.chunk.js.map": "/ApexFit/static/js/453.d66108e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2922b50c.css",
+    "static/js/main.3adc7258.js"
+  ]
+}
