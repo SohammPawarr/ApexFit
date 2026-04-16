@@ -8,7 +8,7 @@ const ProductCard = ({ product, addToCart }) => {
   return (
     <div className="product-card">
       <div className="product-image-container">
-        <img src={product.image} alt={product.name} className="product-image" />
+        <img src={process.env.PUBLIC_URL + product.image} alt={product.name} className="product-image" />
       </div>
       <div className="product-info">
         <div>

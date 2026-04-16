@@ -45,7 +45,7 @@ const CartView = ({ cart, setCart, onBack, isMobile }) => {
           <div className="cart-items">
             {cart.map((item, index) => (
               <div key={item.id} className="cart-item" style={{ animationDelay: `${index * 0.1}s` }}>
-                <img src={item.image} alt={item.name} className="cart-item-image" />
+                <img src={process.env.PUBLIC_URL + item.image} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-details">
                   <div className="brand">{item.brand}</div>
                   <h3 className="name">{item.name}</h3>
