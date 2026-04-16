@@ -1,0 +1,340 @@
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 15px rgba(230, 57, 70, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(230, 57, 70, 0.5); }
+  100% { box-shadow: 0 0 15px rgba(230, 57, 70, 0.2); }
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  min-height: 70vh;
+  color: #1A1A1A; /* Changed to dark for light background */
+  animation: slideUpFade 0.4s ease-out forwards;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 24px;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  color: #666666; /* Dark gray */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.btn-back:hover {
+  background: #e0e0e0;
+  color: #1A1A1A; /* Black */
+  transform: translateX(-4px);
+}
+
+.cart-title {
+  font-family: 'Outfit', 'Monument Extended', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1.5px;
+  color: #1A1A1A; /* Black */
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  background: #f9f9f9;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  text-align: center;
+  margin-top: 40px;
+  animation: slideUpFade 0.6s ease-out forwards;
+}
+
+.empty-cart p {
+  color: #666666; /* Dark gray */
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background: #E63946;
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2);
+}
+
+.btn-primary:hover {
+  background: #ff4d5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.cart-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.cart-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff; /* White background */
+  border: 1px solid #eaeaea; /* Light border */
+  border-radius: 16px;
+  padding: 24px;
+  gap: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02); /* Soft shadow */
+}
+
+.cart-item:hover {
+  background: #ffffff;
+  border-color: #d0d0d0;
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05); /* Stronger dark shadow */
+}
+
+.cart-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: #fcfcfc; /* Very light gray */
+  border-radius: 12px;
+  padding: 10px;
+  transition: transform 0.4s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.cart-item:hover .cart-item-image {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details .brand {
+  color: #E63946; /* Red */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.cart-item-details .name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+  color: #1A1A1A; /* Black */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cart-item-details .price {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #1A1A1A; /* Black */
+  font-size: 1.25rem;
+}
+
+.cart-item-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9; /* Light gray */
+  border: 1px solid #eaeaea; /* Light border */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.qty-controls:hover {
+  border-color: #cccccc;
+}
+
+.qty-btn {
+  background: transparent;
+  color: #1A1A1A; /* Black */
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.qty-btn:hover {
+  background: #eaeaea; /* Light gray */
+  color: #000000;
+}
+
+.qty {
+  width: 44px;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1A1A1A; /* Black */
+}
+
+.remove-btn {
+  background: transparent;
+  color: #999999; /* Light gray */
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  border-radius: 8px;
+}
+
+.remove-btn:hover {
+  color: #E63946;
+  background: #feebeb; /* Very light red */
+}
+
+.cart-summary {
+  width: 380px;
+  background: #ffffff; /* White background */
+  border: 1px solid #eaeaea; /* Light border */
+  border-top: 3px solid #E63946; /* Red accent border on top */
+  border-radius: 12px;
+  padding: 35px;
+  position: sticky;
+  top: 120px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+.cart-summary h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: #1A1A1A; /* Black */
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: #666666; /* Dark gray */
+  font-family: 'Inter', sans-serif;
+}
+
+.summary-divider {
+  border: 0;
+  height: 1px;
+  background: #eaeaea; /* Solid light divider */
+  margin: 24px 0;
+}
+
+.summary-row.total {
+  font-size: 1.8rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  color: #E63946; /* Red */
+  margin-top: 10px;
+  margin-bottom: 35px;
+  align-items: center;
+}
+
+/* Rest of media queries remain the same */
+@media (max-width: 900px) {
+  .cart-content {
+    flex-direction: column;
+  }
+  
+  .cart-summary {
+    width: 100%;
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .cart-item-image {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .cart-item-controls {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+}

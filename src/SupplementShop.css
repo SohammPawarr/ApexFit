@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FDFDFD;
+}
+
+.shop-container {
+  min-height: 100vh;
+  color: #1A1A1A;
+  font-family: "Inter", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Category Wrapper */
+.category-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+@media (max-width: 600px) {
+  .category-wrapper { 
+    padding: 40px 20px;
+  }
+}
+
+.section-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #1A1A1A;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Carousel Buttons */
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-btn {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1A1A1A;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.carousel-btn:hover {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border-color: #1A1A1A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Carousel Inner Scroll Area */
+.carousel-section {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding-bottom: 30px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.carousel-section::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Product Cards - Consistent Grey Design */
+.product-card {
+  border-radius: 20px;
+  background-color: #F4F4F5; /* Consistent Light Grey */
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-card .price {
+    font-size: 1.4rem;
+  }
+
+  .product-card .btn-add {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #FFFFFF; /* Pure white inside the image container to pop the PNG */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.product-image {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+.product-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+/* Highlighting in Black & Red */
+.product-card .badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.70rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  background-color: rgba(230, 57, 70, 0.1); /* Subtle red bg */
+  color: #E63946; /* Red highlight */
+}
+
+.product-card .brand {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.product-card .name {
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+  line-height: 1.15;
+  color: #1A1A1A; /* Black highlight */
+}
+
+.product-card .desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4A4A4A;
+  margin: 0 0 25px 0;
+  flex-grow: 1;
+}
+
+.product-card .bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-card .price {
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: #E63946; /* Deep red for price */
+}
+
+.product-card .btn-add {
+  background-color: #1A1A1A; /* Black fill */
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px; /* Slightly squared corners feel more premium than pure pill */
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.product-card .btn-add:hover {
+  background-color: #E63946; /* Change to red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* Header & Nav */
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background-color: rgba(253, 253, 253, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-anchor {
+  color: #1A1A1A;
+  text-decoration: none;
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-anchor::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-color: #E63946;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-anchor:hover {
+  color: #E63946;
+}
+
+.nav-anchor:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hamburger & Sidebar */
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar-panel {
+  position: absolute;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: #FFFFFF;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-panel.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+.close-btn:hover {
+  background: #F4F4F5;
+  color: #E63946;
+}
+.close-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+}
+
+.sidebar-anchor {
+  color: #1A1A1A;
+  text-decoration: none;
+  font-family: "Outfit", "Monument Extended", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.sidebar-anchor:hover {
+  transform: translateX(10px);
+  color: #E63946;
+  border-color: #E63946;
+}
